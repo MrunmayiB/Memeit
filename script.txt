@@ -1,0 +1,11 @@
+CREATE ROLE server WITH LOGIN PASSWORD 'password';
+CREATE DATABASE api;
+\c api
+CREATE TABLE posts (
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  url TEXT,
+  caption TEXT
+);
+ALTER USER server WITH SUPERUSER;
+\q
